@@ -16,8 +16,9 @@ const CreateCoworking = () => {
 
     return (
         <section>
+            <h2>FORMULAIRE</h2>
             <form className="formulaire" onSubmit={handleSubmit} action="Formulaire">
-                <h2>FORMULAIRE</h2>
+
                 <label >Titre</label>
                 <input type="text" name="titre" />
 
@@ -29,12 +30,13 @@ const CreateCoworking = () => {
 
                 <button className="btn" type="submit">Envoyer le message</button>
             </form>
+            <div className="info">
+                <h3>Vos informations: </h3>
 
-            <h3>Vos informations: </h3>
-
-            <p>Titre:{titre} </p>
-            <p>Description:{description}</p>
-            <p>Adresse:{adresse}</p>
+                <p>Titre: {titre} </p>
+                <p>Description: {description}</p>
+                <p>Adresse: {adresse}</p>
+            </div>
         </section>
     )
 }
