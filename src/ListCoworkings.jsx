@@ -47,27 +47,28 @@ const ListCoworkings = () => {
     const handleOnclickEysines = () => { filter("Eysines") }
 
     const filteredCoworkings = coworkings.filter((coworking) => {
+        // if(city ===null){
+        //     return true
+        // }
         return coworking.address === resultDefault;
     });
 
     return (
         <section>
-            <h2>Liste des coworkings</h2>
-
-            <button onClick={handleOnclickBordeaux}>Bordeaux</button>
-            <button onClick={handleOnclickMerignac}>Mérignac</button>
-            <button onClick={handleOnclickLormont}>Lormont</button>
-            <button onClick={handleOnclickEysines}>Eysines</button>
-
-
-
+            <h2>LISTE DES COWORKINGS</h2>
+            <div className="containerBtnListe">
+                <button className="btnListe" onClick={handleOnclickBordeaux}>Bordeaux</button>
+                <button className="btnListe" onClick={handleOnclickMerignac}>Mérignac</button>
+                <button className="btnListe" onClick={handleOnclickLormont}>Lormont</button>
+                <button className="btnListe" onClick={handleOnclickEysines}>Eysines</button>
+            </div>
             {filteredCoworkings.map((coworking) => {
                 return (
-                    <article key={coworking.id}>
+                    <article className="containerListe" key={coworking.id}>
                         <h3>{coworking.name}</h3>
-                        <p>{coworking.address}</p>
-                        <p>{coworking.phone}</p>
-                        <img src={coworking.img} alt={coworking.name} />
+                        <p>Adresse : {coworking.address}</p>
+                        <p>Téléphone :{coworking.phone}</p>
+                        <div> <img src={coworking.img} alt={coworking.name} /></div>
                     </article>
                 );
             })}

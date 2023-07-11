@@ -8,13 +8,13 @@ body{
   display: flex;
   justify-content: center;
     flex-direction: column;
-padding: 10px 500px;
+  padding: 10px 500px;
 }
 
 h2{text-align: center;
   color:white;
   background-color: black;
-padding: 40px 0px;
+  padding: 40px 0px;
 
 }
 .btn{
@@ -25,4 +25,24 @@ padding: 40px 0px;
 .info{
   text-align: center;
   margin: 40px 0px;
+}
+
+.containerListe{
+  display: flex;
+  flex-direction:column;
+  
+}
+
+.containerBtnListe{
+  display: flex;
+  justify-content: space-around;
+}
+
+.btnListe{
+  padding: 5px 25px;
+  margin: 10px;
+}
+
+.messageContact{
+  text-align: center;
 }
