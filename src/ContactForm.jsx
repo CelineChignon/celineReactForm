@@ -43,7 +43,7 @@ const ContactForm = () => {
                 <button className="btn" type="submit">Envoyer</button>
             </form>
 
-            {form.email != "" &&
+            {form.email !== "" &&
                 <p className="messageContact" >
                     Votre demande à bien été prise en compte et nous vous en remercions. <br />
                     Nous vous ferons un retour dans les plus brefs délais à l'adresse mail: {form.email} <br />
@@ -52,5 +52,5 @@ const ContactForm = () => {
         </>
     )
 }
-//Rajoout d'une condition, si email est différent de ""(vide) alors on affiche le message final.
+//Rajoout d'une condition, si l'email est différent de ""(vide) alors on affiche le message final.
 export default ContactForm;

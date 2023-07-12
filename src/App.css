@@ -46,3 +46,8 @@ h2{text-align: center;
 .messageContact{
   text-align: center;
 }
+
+.btnDeleteCoworking{
+  padding: 5px 40px;
+  margin:10px 610px;
+}

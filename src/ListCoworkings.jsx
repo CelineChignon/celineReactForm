@@ -1,4 +1,5 @@
 import { useState } from "react";
+import ShowCoworking from "./ShowCoworking";
 
 const ListCoworkings = () => {
     const coworkings = [
@@ -45,15 +46,21 @@ const ListCoworkings = () => {
     const handleOnclickMerignac = () => { filter("Merignac") }
     const handleOnclickLormont = () => { filter("Lormont") }
     const handleOnclickEysines = () => { filter("Eysines") }
+    const handleOnclickAll = () => { filter("Tous") }
 
     const filteredCoworkings = coworkings.filter((coworking) => {
-        // if(city ===null){
-        //     return true
-        // }
+        if (resultDefault === handleOnclickAll) {
+            return true
+        }
         return coworking.address === resultDefault;
     });
 
+    const handleDelte = (id) => {
+        console.log("coworking supprimé id n°", id)
+    }
+
     return (
+
         <section>
             <h2>LISTE DES COWORKINGS</h2>
             <div className="containerBtnListe">
@@ -61,18 +68,16 @@ const ListCoworkings = () => {
                 <button className="btnListe" onClick={handleOnclickMerignac}>Mérignac</button>
                 <button className="btnListe" onClick={handleOnclickLormont}>Lormont</button>
                 <button className="btnListe" onClick={handleOnclickEysines}>Eysines</button>
+
+                <button className="btnListe" onClick={handleOnclickAll}>Tous</button>
             </div>
             {filteredCoworkings.map((coworking) => {
                 return (
-                    <article className="containerListe" key={coworking.id}>
-                        <h3>{coworking.name}</h3>
-                        <p>Adresse : {coworking.address}</p>
-                        <p>Téléphone :{coworking.phone}</p>
-                        <div> <img src={coworking.img} alt={coworking.name} /></div>
-                    </article>
+                    <ShowCoworking coworking={coworking} />
                 );
             })}
         </section>
+
     );
 };
 
